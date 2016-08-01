@@ -42,6 +42,13 @@ module.exports = function (grunt) {
 						dest: BUILD_DIR + '/styles',
 						flatten: false,
 						expand: true
+					},
+					{
+						cwd: SRC_DIR,
+						src: '*.js',
+						dest: BUILD_DIR,
+						flatten: false,
+						expand: true
 					}
 				]
 			}
@@ -51,7 +58,7 @@ module.exports = function (grunt) {
 				options: {
 					//polyfills: [''],
 					vendor: [
-						'./node_modules/systemjs-builder/node_modules/jquery/dist/jquery.js'
+						'./node_modules/jquery/dist/jquery.js'
 					],
 					helpers: ['./src/index.js'],
 					keepRunner: false,
