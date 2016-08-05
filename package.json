@@ -2,7 +2,7 @@
 	"name": "frontend-jquery-textformat",
 	"private": true,
 	"description": "Parse text in the text field and display the result in the page",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"license": "MIT",
 	"author": "Fabrika",
 	"main": "src/index.html",
@@ -35,8 +35,8 @@
 		"live": "grunt live",
 		"code": "grunt code"
 	},
-	"engines" : { 
+	"engines" : {
 		"node" : ">=0.10.0",
-		"npm" : ">=3.0.0" 
+		"npm" : ">=3.0.0"
 	}
 }
