@@ -5,19 +5,6 @@ module.exports = function (grunt) {
 		TASKS_DIR = 'tasks';
 
 	grunt.initConfig({
-		watch: {
-			sources: {
-				files: [
-					SRC_DIR + '/**/*.*',
-					TEST_DIR + '/**/*.*'
-				],
-				//tasks: ['jshint'],
-				options: {
-					interrupt: true,
-					livereload: 35729
-				}
-			}
-		},
 		jshint: {
 			dev: {
 				options: {
@@ -82,6 +69,64 @@ module.exports = function (grunt) {
 					return config;
 				} ())
 			}
+		},
+		watch: {
+			all: {
+				files: [
+					SRC_DIR + '/**/*.*',
+					TEST_DIR + '/**/*.*'
+				],
+				//tasks: ['jshint'],
+				options: {
+					interrupt: true,
+					livereload: 35729
+				}
+			},
+			dev: {
+				files: [
+					SRC_DIR + '/**/*.*'
+				],
+				//tasks: ['jshint'],
+				options: {
+					interrupt: true,
+					livereload: 35729
+				}
+			}
+		},
+		browserSync: {
+			bsFiles: {
+				src: [
+					SRC_DIR + '/**/*.js',
+					SRC_DIR + '/**/*.css',
+					SRC_DIR + '/**/*.html'
+				]
+			},
+			//https://www.browsersync.io/docs/options
+			options: {
+				watchTask: true,
+				server: {
+					baseDir: '.'
+				},
+				// proxy: '',
+				// host: '',
+				// port: 3000,
+				// https: true,
+				startPath: '/' + SRC_DIR,
+				// browser: ['google chrome', 'firefox'']
+				// localOnly: true,
+				cors: false,
+				open: 'external',
+				notify: false,
+				reloadOnRestart: true,
+				reloadDelay: 0,
+				reloadDebounce: 0,
+				reloadThrottle: 0,
+				ghostMode: {
+					clicks: true,
+					forms: true,
+					scroll: true
+				}
+			}
 		}
 	});
 
@@ -91,8 +136,10 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jasmine');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-targethtml');
+	grunt.loadNpmTasks('grunt-browser-sync');
 
-	grunt.registerTask('live', ['watch']);
+	grunt.registerTask('start', ['browserSync', 'watch:dev']);
+	grunt.registerTask('live', ['watch:all']);
 	grunt.registerTask('code', ['jshint:dev']);
 	grunt.registerTask('test', ['jasmine', 'clean:test']);
 	grunt.registerTask('build', ['clean:build', 'targethtml:build', 'copy:build']);
