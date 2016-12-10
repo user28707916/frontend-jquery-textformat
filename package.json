@@ -2,9 +2,9 @@
 	"name": "frontend-jquery-textformat",
 	"private": true,
 	"description": "Parse text in the text field and display the result in the page",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"license": "MIT",
-	"author": "Fabrika",
+	"author": "Constantine Genchevsky",
 	"main": "src/index.html",
 	"repository": {
 		"type": "git",
@@ -27,7 +27,7 @@
 		"grunt-contrib-jasmine": "1.0.3",
 		"grunt-contrib-clean": "1.0.0",
 		"grunt-contrib-copy": "1.0.0",
-		"jasmine-core": "2.2.0"
+		"jasmine-core": "*"
 	},
 	"scripts": {
 		"test": "grunt test",

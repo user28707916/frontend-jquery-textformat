@@ -1,25 +1,12 @@
 'use strict';
 
-describe('script', function () {
-	var inputElem
-	var outputElem
-
-	beforeEach(function(){
-		inputElem = document.querySelector('.message-field')
-		outputElem = document.querySelector('.message-formatted')
+describe('test', function () {
+	it('true to be truthy', function () {
+		expect(true).toBeTruthy()
 	})
 
-	it('input element exist', function () {
-		expect(inputElem).toBeDefined()
-	})
-
-	it('output element exist', function () {
-		expect(outputElem).toBeDefined()
-	})
-
-	it('left spaces are trimmed', function () {
-		inputElem.value = '  test'
-		expect(outputElem).toEqual('test')
+	it('1 to equal 1', function () {
+		expect(1).toEqual(1)
 	})
 })
 

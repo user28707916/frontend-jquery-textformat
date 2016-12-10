@@ -5,8 +5,11 @@
 	<meta name="viewport" content="minimum-scale=1, width=device-width, maximum-scale=1, user-scalable=no, minimal-ui"/>
 	<!--(if target dev)><!-->
 	<script src="http://localhost:35729/livereload.js"></script>
+	<script src="../node_modules/jquery/dist/jquery.js"></script>
 	<!--<!(endif)-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<!--(if target build)>
+	<script src="jquery.js"></script>
+	<!(endif)-->
 	<link href="styles/style.css" rel="stylesheet" />
 	<title>frontend-jquery-textformat</title>
 </head>
