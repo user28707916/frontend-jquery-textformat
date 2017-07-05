@@ -1,18 +1,22 @@
 'use strict';
 
-var messageField = $('main .message-field');
+var messageField = $('.message-form .message-field');
 var messageFormatted = $('main .message-formatted');
 var textChange = $('main .message-form');
 
-String.prototype.trimAll = function formattedText() {
-    var r = /\s+/g;
-    return this.replace(r, '')
-        .toLowerCase();
+function formattedText(){
+     messageFormatted.text(
+         messageField.val().trim()
+                        .replace(/\s+/g, ' ')
+                        .toLowerCase()
+    );
 }
 
-function inputFormated() {
+function inputFormated(){
     messageFormatted.text('');
 }
 
-messageField.on('clear', formattedText);
+messageField.on('keyup', formattedText);
 textChange.on('input', inputFormated);
+
+
