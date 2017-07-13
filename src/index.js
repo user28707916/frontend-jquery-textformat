@@ -2,7 +2,7 @@
 
 var messageField = $('.message-form .message-field');
 var messageFormatted = $('main .message-formatted');
-var textChange = $('main .message-form');
+var textChange = $('main .message-field');
 
 function formattedText(){
      messageFormatted.text(
