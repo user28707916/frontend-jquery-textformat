@@ -2,7 +2,6 @@
 
 var messageField = $('.message-form .message-field');
 var messageFormatted = $('main .message-formatted');
-var textChange = $('main .message-field');
 
 function formattedText(){
      messageFormatted.text(
@@ -16,7 +15,7 @@ function inputFormated(){
     messageFormatted.text('');
 }
 
-messageField.on('keyup', formattedText);
-textChange.on('input', inputFormated);
+messageField.on('input', formattedText);
+textChange.on('reset', inputFormated);
 
 
