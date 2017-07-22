@@ -9,10 +9,6 @@ function formattedText(){
     );
 }
 
-function inputFormated(){
-    messageFormatted.text('');
-}
-
 messageField.on('input', formattedText);
 
 
