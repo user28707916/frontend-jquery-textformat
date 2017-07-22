@@ -1,5 +1,3 @@
-'use strict';
-
 var messageField = $('.message-form .message-field');
 var messageFormatted = $('main .message-formatted');
 
@@ -16,6 +14,6 @@ function inputFormated(){
 }
 
 messageField.on('input', formattedText);
-textChange.on('reset', inputFormated);
+
 
 
